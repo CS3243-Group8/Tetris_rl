@@ -15,11 +15,11 @@ class TetrisGenerator(Sequence):
 
     def __init__(self):
         self.observation = self.env.reset()
-        self.counter = 0
+        self.counter = 1
 
     def __getitem__(self, index):
         self.counter = self.counter + 1
-        if self.counter > 500:
+        if self.counter > 100:
             self.__init__()
         best_evaluation = - 100000
         best_action_num = -1
@@ -44,4 +44,4 @@ class TetrisGenerator(Sequence):
         return processed_action
 
     def __len__(self):
-        return 1000000
+        return 1300000
