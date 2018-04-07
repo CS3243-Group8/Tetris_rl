@@ -7,7 +7,6 @@ import numpy as np
 
 class TetrisEnv(Env):
     randomness = Random()
-    randomness.seed = 0
 
     board = None
     top = None
@@ -133,7 +132,6 @@ class TetrisEnv(Env):
     class ActionSpace(Space):
         env = None
         random_action = Random()
-        random_action.seed = 0
         legal_moves= []
         n = 0
 
